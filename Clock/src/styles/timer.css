@@ -1,0 +1,59 @@
+#begin,#reset{
+    border-radius: 50%;
+    font-size: 20px;
+    padding: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(101, 147, 233);
+    font-weight: bold;
+    margin-top: 50px;
+    margin-left:40px;
+    margin-right:40px;
+}
+.home:hover{ 
+    border: 1px solid #fff !important; 
+}
+#about:hover{
+    font-size: large;
+}
+#begin:hover, #reset:hover:enabled{
+    background-color: tomato;
+}
+.timer{
+    text-align: center;
+}
+#inputTime{
+    font-size: 55px;
+    border-color: blue;
+    border-radius: 5%;
+    margin-top: 50px;
+    text-align: center;
+    width: 40%;
+}
+
+#inputTime:hover{
+    border-color:tomato;
+}
+.progressbar {
+width: 80%;
+margin: 25px auto;
+border: solid 1px #000;
+}
+.inner {
+height: 15px;
+animation: progressbar-countdown;
+animation-iteration-count: 1;
+animation-fill-mode: forwards;
+animation-play-state: paused;
+animation-timing-function: linear;
+}
+@keyframes progressbar-countdown {
+0% {
+width: 100%;
+background: #0F0;
+}
+100% {
+width: 0%;
+background: #F00;
+}
+}

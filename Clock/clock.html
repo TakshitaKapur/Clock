@@ -1,0 +1,71 @@
+<html> 
+<head>
+    <title>
+        Clock
+    </title>
+    <h1>Count on me!</h1>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        h1{
+            padding-top: 60px;
+            margin-left: 50%;
+            font-size: 80px !important;
+        
+        }
+        html{
+            height: 100%;
+            width: 100%;
+            background-image: url('./src/img/pexels-steve-johnson-2182727.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .bg{
+            margin-top: 150px;
+            margin-left: 60%;
+            font-size: large;
+        }
+
+        img{
+            height: 30px;
+            width: 50px;
+
+        }
+        
+        #stopwatch, #countdown, #worldClock{
+            
+            color: #333;
+            font-size: 40px;
+            -webkit-text-stroke: 1px #282828;
+            
+            /* text-decoration: none; */
+        }
+        .time, .clock {
+            margin-top: 3%;
+        }
+        a#worldClock:hover, a#stopwatch:hover, a#countdown:hover {
+            color: #ff0000;
+            font-size: 42px;
+        } 
+        
+    </style>
+</head>
+
+<body>
+    <div class="bg">
+        <div class="stop">
+            <img src="./src/img/stopwatch.svg">
+            <a href="./src/html/stopwatch.html" id="stopwatch">Stopwatch</a>
+
+        </div>
+        <div class="time">
+            <img src="./src/img/hourglass-top.svg">
+            <a href="./src/html/timer.html" id="countdown">Timer</a>
+        </div>
+        <div class="clock">
+            <img src="./src/img/globe2.svg">
+            <a href="./src/html/worldClock.html" id="worldClock">World Clock</a>
+        </div>
+    </div>
+</body>
+</html>
