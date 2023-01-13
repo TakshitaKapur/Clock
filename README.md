@@ -1,4 +1,5 @@
-Consist of Stopwatch, Timer and World Clock 
+Consist of Stopwatch, Timer and World Clock
+
 Stopwatch:
   Options available are: Start, stop, reset, flag
   Speech recognition method is also available to execute stopwatch
