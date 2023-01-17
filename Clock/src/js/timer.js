@@ -17,21 +17,16 @@ function Startbtn(){
         hr=Number(str[0]);
         min=Number(str[1]);
         sec=Number(str[2]);
-        if(check==0){
-            createProgressbar(function() 
-                {
-                    // alert('Timeout!');
-                    audio.play();
-                });
-                check++;
-                
+        if(check!=0){
+            progressbarinner.remove();
+            progressbar.className='';
         }
-        else{
-            progressbarinner.style.animationPlayState = 'running';  
-        }
-            var duration= ((hr*3600)+(min*60)+sec+1.5)+"s";
-            progressbarinner.style.animationDuration = duration;
-
+        createProgressbar(function(){
+            audio.play();
+        });
+        var duration= ((hr*3600)+(min*60)+sec+1.2)+"s";
+        progressbarinner.style.animationDuration = duration;
+        progressbarinner.style.animationPlayState = 'running';
         flag =setInterval(interval,1000);
         begin.innerHTML="Stop";
     }
@@ -40,6 +35,7 @@ function Startbtn(){
         begin.innerHTML="Start";
         reset.disabled=false;
         progressbarinner.style.animationPlayState = 'paused';
+        check++;
     }
 }
 
@@ -51,16 +47,15 @@ function interval(){
     else if(sec<=0 && min>0){
         min--;
         input.value= n(hr) + ":" + n(min) + ":" + n(sec);
-        sec=5;
+        sec=59;
     }
     else if(min<=0 && hr>0){
         hr--;
-        min=5;
+        min=59;
         input.value= n(hr) + ":" + n(min) + ":" + n(sec);
-        sec=5;
+        sec=59;
     }
     else if(sec==0 && min == 0 && hr==0){
-        console.log("Timeout");
         input.value= "00:00:00";
         begin.innerHTML="Start";
         reset.disabled=false;

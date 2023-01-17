@@ -19,12 +19,10 @@ var interval, check = 0;
 
 function start(){
         if (check==0){
-                console.log("start button clicked!!");
                 START.src='../img/pause-circle.svg';
                 interval=window.setInterval(myinterval,10);
                 check++;
         }else {
-            console.log("Stopped");
             window.clearInterval(interval);
             START.src='../img/play-circle.svg';
             
@@ -33,8 +31,7 @@ function start(){
 }
 
 function reset(){
-
-    console.log("reset button clicked!!");   
+   
     HR.innerHTML="00";
     MIN.innerHTML="00";
     SEC.innerHTML="00";
@@ -43,13 +40,11 @@ function reset(){
     demo.innerHTML="";
 }
 function flag(){
-    console.log("flag button clicked!!");
     var element=document.createElement("div");
     element.style.paddingBottom="10px";
     element.style.fontFamily="Verdana";
     element.style.fontSize="30px";
     element.innerHTML=HR.innerHTML+ ":" + MIN.innerHTML+ ":" + SEC.innerHTML+ ":" + MS.innerHTML;
-    console.log(element.innerHTML);
     lap.append(element);
 }
 
@@ -61,11 +56,11 @@ function myinterval(){
         SEC.innerHTML=n((Number(SEC.innerHTML)+1));
         MS.innerHTML="00";
     }
-    if(SEC.innerHTML>=6){
+    if(SEC.innerHTML>=60){
         MIN.innerHTML=n((Number(MIN.innerHTML)+1));
         SEC.innerHTML="00";
     }
-    if(MIN.innerHTML>=6){
+    if(MIN.innerHTML>=60){
         HR.innerHTML=n((Number(HR.innerHTML)+1));
         MIN.innerHTML="00";
     }
@@ -102,16 +97,12 @@ recognition.onresult = function (event) {
             {
                 if (check==0)
                 start();
-                else
-                console.log("multiple start");
             }
             break;
         case "stop":
             {
                 if (check!=0)
                 start();
-                else
-                console.log("multiple stop");
             }
             break;
         case "reset":
@@ -133,6 +124,3 @@ recognition.onresult = function (event) {
 function n(n){
     return n > 9 ? "" + n: "0" + n;
 }
-
-// Multiple flag on speak
-// Microphone Auto turn off
